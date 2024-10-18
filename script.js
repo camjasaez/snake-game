@@ -45,13 +45,6 @@ function moveSnake() {
   }
 }
 
-function gameLoop() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  moveSnake();
-  drawSnake();
-  drawFood();
-}
-
 function changeDirection(event) {
   const LEFT_KEY = 37;
   const RIGHT_KEY = 39;
@@ -76,6 +69,39 @@ function changeDirection(event) {
     dx = 0;
     dy = 1;
   }
+}
+
+function checkCollision() {
+  const head = snake[0];
+
+  // Colisión con los bordes
+  if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount) {
+    return true;
+  }
+
+  // Colisión con el cuerpo
+  for (let i = 1; i < snake.length; i++) {
+    if (head.x === snake[i].x && head.y === snake[i].y) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function gameLoop() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  moveSnake();
+
+  if (checkCollision()) {
+    alert('Game Over!');
+    snake = [{ x: 10, y: 10 }];
+    dx = 0;
+    dy = 0;
+  }
+
+  drawSnake();
+  drawFood();
 }
 
 setInterval(gameLoop, 100);

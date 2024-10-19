@@ -6,7 +6,7 @@ const GRID_SIZE = 20;
 const tileCount = canvas.width / GRID_SIZE;
 
 let snake = [{ x: 10, y: 10 }];
-let food = { x: 15, y: 15 };
+const food = { x: 15, y: 15 };
 let dx = 0;
 let dy = 0;
 
@@ -20,12 +20,7 @@ let dy = 0;
 function drawSnake() {
   ctx.fillStyle = 'green';
   snake.forEach((segment) => {
-    ctx.fillRect(
-      segment.x * GRID_SIZE,
-      segment.y * GRID_SIZE,
-      GRID_SIZE,
-      GRID_SIZE
-    );
+    ctx.fillRect(segment.x * GRID_SIZE, segment.y * GRID_SIZE, GRID_SIZE, GRID_SIZE);
   });
 }
 

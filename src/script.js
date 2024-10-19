@@ -122,6 +122,9 @@ function checkCollision() {
   return false;
 }
 
+/**
+ * Updates the score display element with the current score.
+ */
 function updateScore() {
   scoreElement.textContent = `Score: ${score}`;
 }

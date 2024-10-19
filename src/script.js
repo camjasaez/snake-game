@@ -10,6 +10,9 @@ const food = { x: 15, y: 15 };
 let dx = 0;
 let dy = 0;
 
+let score = 0;
+const scoreElement = document.getElementById('score');
+
 /**
  * Draws the snake on the canvas.
  * @param {CanvasRenderingContext2D} ctx - The canvas rendering context.
@@ -57,6 +60,8 @@ function moveSnake() {
 
   if (head.x === food.x && head.y === food.y) {
     // The snake ate the food
+    score += 10;
+    updateScore();
     generateFood();
   } else {
     snake.pop();
@@ -117,6 +122,9 @@ function checkCollision() {
   return false;
 }
 
+function updateScore() {
+  scoreElement.textContent = `Score: ${score}`;
+}
 /**
  * Main game loop.
  * Clears the canvas, moves the snake, checks for collisions,
@@ -131,6 +139,8 @@ function gameLoop() {
     snake = [{ x: 10, y: 10 }];
     dx = 0;
     dy = 0;
+    score = 0;
+    updateScore();
   }
 
   drawSnake();

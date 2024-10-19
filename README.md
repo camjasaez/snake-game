@@ -4,18 +4,12 @@ _A veces cuando me aburro, comienzo a programar cositas asi_
 
 ## To-do:
 
-- Sistema de puntuación
-- Niveles de dificultad
-- Pantalla de inicio y fin de juego
-- Efectos de sonido
-- Poder especial
-- Obstáculos
-- Diferentes tipos de comida
-- Animaciones
-- Modo de dos jugadores
-- Persistencia de puntuación alta
-- Diseño responsivo
-- Temas visuales
+- [x] Sistema de puntuación
+- [ ] Persistencia de puntuación alta (localStorage)
+- [ ] Niveles de dificultad
+- [ ] Diseño responsivo
+- [ ] Pantalla de inicio y fin de juego
+- [ ] Obstáculos
 
 ## Build with 🛠️
 

@@ -5,9 +5,9 @@
   "description": "_A veces cuando me aburro, comienzo a programar cositas asi_",
   "main": "script.js",
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write ."
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write \"src/**/*.{js,html,css}\""
   },
   "keywords": [],
   "author": "",

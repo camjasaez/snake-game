@@ -11,7 +11,9 @@ let dx = 0;
 let dy = 0;
 
 let score = 0;
+let highScore = 0;
 const scoreElement = document.getElementById('score');
+const highScoreElement = document.getElementById('highScore');
 
 /**
  * Draws the snake on the canvas.
@@ -128,6 +130,53 @@ function checkCollision() {
 function updateScore() {
   scoreElement.textContent = `Score: ${score}`;
 }
+
+/**
+ * Resets the game state.
+ */
+function resetGame() {
+  snake = [{ x: 10, y: 10 }];
+  dx = 0;
+  dy = 0;
+  score = 0;
+  updateScore();
+  generateFood();
+}
+
+/**
+ * Updates the high score display element.
+ */
+function updateHighScoreDisplay() {
+  highScoreElement.textContent = `High Score: ${highScore}`;
+}
+
+/**
+ * Updates the score display element with the current score.
+ */
+function updateScore() {
+  scoreElement.textContent = `Score: ${score}`;
+}
+
+/**
+ * Updates the high score if the current score is higher.
+ */
+function updateHighScore() {
+  if (score > highScore) {
+    highScore = score;
+    localStorage.setItem('snakeHighScore', highScore.toString());
+    updateHighScoreDisplay();
+  }
+}
+
+/**
+ * Initializes the high score from localStorage or sets it to 0 if not present.
+ */
+function initHighScore() {
+  const savedHighScore = localStorage.getItem('snakeHighScore');
+  highScore = savedHighScore ? parseInt(savedHighScore, 10) : 0;
+  updateHighScoreDisplay();
+}
+
 /**
  * Main game loop.
  * Clears the canvas, moves the snake, checks for collisions,
@@ -138,16 +187,15 @@ function gameLoop() {
   moveSnake();
 
   if (checkCollision()) {
-    alert(`Game Over! Your score: ${score}`);
-    snake = [{ x: 10, y: 10 }];
-    dx = 0;
-    dy = 0;
-    score = 0;
-    updateScore();
+    updateHighScore();
+    alert(`Game Over! Your score: ${score}\nHigh Score: ${highScore}`);
+    resetGame();
   }
 
   drawSnake();
   drawFood();
 }
 
+// Initialize the game
+initHighScore();
 setInterval(gameLoop, 100);

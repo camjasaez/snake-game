@@ -6,7 +6,7 @@ _A veces cuando me aburro, comienzo a programar cositas asi_
 
 - [x] Re-estructura en clases y modulos.
 - [x] Sistema de puntuación
-- [ ] Persistencia de puntuación alta (localStorage)
+- [x] Persistencia de puntuación alta (localStorage)
 - [ ] Niveles de dificultad
 - [ ] Diseño responsivo
 - [ ] Pantalla de inicio y fin de juego
@@ -21,40 +21,40 @@ _A veces cuando me aburro, comienzo a programar cositas asi_
 ## Structure
 
 ```
-snake-game/
-│
-├── src/
-│ ├── modules/
-│ │ ├── game.js
-│ │ ├── snake.js
-│ │ ├── food.js
-│ │ ├── renderer.js
-│ │ └── scoreManager.js
-│ │
-│ ├── utils/
-│ │ └── utils.js
-│ │
-│ ├── styles/
-│ │ └── style.css
-│ │
-│ └── index.js
-│
-├── public/
-│ └── index.html
-│
-├── assets/
-│ └── ...
-│
-├── tests/
-│ └── ...
-│
-├── docs/
-│ └── ...
-│
-├── .gitignore
-├── package.json
-├── README.md
-└── eslint.config.js
+    snake-game/
+    │
+    ├── src/
+    │ ├── modules/
+    │ │ ├── game.js
+    │ │ ├── snake.js
+    │ │ ├── food.js
+    │ │ ├── renderer.js
+    │ │ └── scoreManager.js
+    │ │
+    │ ├── utils/
+    │ │ └── utils.js
+    │ │
+    │ ├── styles/
+    │ │ └── style.css
+    │ │
+    │ └── index.js
+    │
+    ├── public/
+    │ └── index.html
+    │
+    ├── assets/
+    │ └── ...
+    │
+    ├── tests/
+    │ └── ...
+    │
+    ├── docs/
+    │ └── ...
+    │
+    ├── .gitignore
+    ├── package.json
+    ├── README.md
+    └── eslint.config.js
 ```
 
 ## License

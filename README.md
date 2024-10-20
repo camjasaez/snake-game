@@ -7,8 +7,9 @@ _A veces cuando me aburro, comienzo a programar cositas asi_
 - [x] Re-estructura en clases y modulos.
 - [x] Sistema de puntuación
 - [x] Persistencia de puntuación alta (localStorage)
+- [x] Diseño responsivo
+- [x] Rediseño visual retro
 - [ ] Niveles de dificultad
-- [ ] Diseño responsivo
 - [ ] Pantalla de inicio y fin de juego
 - [ ] Obstáculos
 

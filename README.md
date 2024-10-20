@@ -18,6 +18,45 @@ _A veces cuando me aburro, comienzo a programar cositas asi_
 - CSS
 - JS
 
+## Structure
+
+```
+snake-game/
+│
+├── src/
+│ ├── modules/
+│ │ ├── game.js
+│ │ ├── snake.js
+│ │ ├── food.js
+│ │ ├── renderer.js
+│ │ └── scoreManager.js
+│ │
+│ ├── utils/
+│ │ └── utils.js
+│ │
+│ ├── styles/
+│ │ └── style.css
+│ │
+│ └── index.js
+│
+├── public/
+│ └── index.html
+│
+├── assets/
+│ └── ...
+│
+├── tests/
+│ └── ...
+│
+├── docs/
+│ └── ...
+│
+├── .gitignore
+├── package.json
+├── README.md
+└── eslint.config.js
+```
+
 ## License
 
 MIT

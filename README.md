@@ -4,6 +4,7 @@ _A veces cuando me aburro, comienzo a programar cositas asi_
 
 ## To-do:
 
+- [x] Re-estructura en clases y modulos.
 - [x] Sistema de puntuación
 - [ ] Persistencia de puntuación alta (localStorage)
 - [ ] Niveles de dificultad

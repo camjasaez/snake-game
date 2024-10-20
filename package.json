@@ -1,15 +1,20 @@
 {
   "type": "module",
-  "name": "snake",
+  "name": "snake-game",
   "version": "1.0.0",
-  "description": "_A veces cuando me aburro, comienzo a programar cositas asi_",
-  "main": "script.js",
+  "description": "A simple Snake game implemented in JavaScript",
+  "main": "src/index.js",
   "scripts": {
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "format": "prettier --write \"src/**/*.{js,html,css}\""
+    "format": "prettier --write \"src/**/*.{js,html,css}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "game",
+    "snake",
+    "javascript"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {

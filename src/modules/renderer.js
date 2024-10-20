@@ -13,14 +13,16 @@ class Renderer {
   }
 
   drawSnake(snake) {
-    this.ctx.fillStyle = 'green';
+    this.ctx.fillStyle = '#33ff33'; // Color neón verde para la serpiente
+    this.ctx.strokeStyle = '#000000'; // Borde negro para mejor visibilidad
     snake.body.forEach((segment) => {
       this.ctx.fillRect(segment.x * GRID_SIZE, segment.y * GRID_SIZE, GRID_SIZE, GRID_SIZE);
     });
   }
 
   drawFood(food) {
-    this.ctx.fillStyle = 'red';
+    this.ctx.fillStyle = '#ff3333'; // Color neón rojo para la comida
+    this.ctx.strokeStyle = '#000000'; // Borde negro para mejor visibilidad
     this.ctx.fillRect(
       food.position.x * GRID_SIZE,
       food.position.y * GRID_SIZE,

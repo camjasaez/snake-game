@@ -65,10 +65,21 @@ class Game {
   gameOver() {
     this.isGameOver = true;
     this.scoreManager.updateHighScore();
-    alert(
-      `Game Over! Your score: ${this.scoreManager.getScore()}\nHigh Score: ${this.scoreManager.getHighScore()}`,
-    );
-    this.reset();
+
+    // Efecto de parpadeo
+    let flashCount = 0;
+    const flashInterval = setInterval(() => {
+      this.canvas.style.opacity = flashCount % 2 === 0 ? '0.5' : '1';
+      flashCount++;
+      if (flashCount > 6) {
+        clearInterval(flashInterval);
+        this.canvas.style.opacity = '1';
+        alert(
+          `Game Over! Your score: ${this.scoreManager.getScore()}\nHigh Score: ${this.scoreManager.getHighScore()}`,
+        );
+        this.reset();
+      }
+    }, 200);
   }
 
   reset() {

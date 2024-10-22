@@ -19,6 +19,8 @@ _A veces cuando me aburro, comienzo a programar cositas asi_
 - CSS
 - JS
 
+![Vista principal](image.png)
+
 ## Structure
 
 ```

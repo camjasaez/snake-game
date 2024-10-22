@@ -74,10 +74,21 @@ class Game {
       if (flashCount > 6) {
         clearInterval(flashInterval);
         this.canvas.style.opacity = '1';
-        alert(
-          `Game Over! Your score: ${this.scoreManager.getScore()}\nHigh Score: ${this.scoreManager.getHighScore()}`,
-        );
-        this.reset();
+
+        // Show modal instead of alert
+        const modal = document.getElementById('gameOverModal');
+        const modalScore = document.getElementById('modalScore');
+        modalScore.textContent = `Score: ${this.scoreManager.getScore()}\nHigh Score: ${this.scoreManager.getHighScore()}`;
+        modal.classList.add('show');
+
+        // Handle restart button
+        const restartButton = document.getElementById('restartButton');
+        const handleRestart = () => {
+          modal.classList.remove('show');
+          this.reset();
+          restartButton.removeEventListener('click', handleRestart);
+        };
+        restartButton.addEventListener('click', handleRestart);
       }
     }, 200);
   }
@@ -87,6 +98,11 @@ class Game {
     this.food.generate(CANVAS_SIZE, this.snake.body);
     this.scoreManager.resetScore();
     this.isGameOver = false;
+
+    // Hide modal if visible
+    const modal = document.getElementById('gameOverModal');
+    modal.classList.remove('show');
+
     this.start();
   }
 }

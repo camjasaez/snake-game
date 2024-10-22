@@ -9,8 +9,8 @@ _A veces cuando me aburro, comienzo a programar cositas asi_
 - [x] Persistencia de puntuación alta (localStorage)
 - [x] Diseño responsivo
 - [x] Rediseño visual retro
-- [ ] Niveles de dificultad
-- [ ] Pantalla de inicio y fin de juego
+- [x] Niveles de dificultad
+- [x] Pantalla de inicio y fin de juego
 - [ ] Obstáculos
 
 ## Build with 🛠️

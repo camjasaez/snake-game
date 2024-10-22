@@ -50,10 +50,37 @@ canvas {
   box-shadow: 0 0 5px #33ff33;
 }
 
+/* Update in style.css */
 .controls {
   margin-top: 20px;
   font-size: 12px;
   text-align: center;
+}
+
+.difficulty-text {
+  color: #33ff33;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #33ff33;
+}
+
+.control-text {
+  color: #33ff33;
+  font-size: 10px;
+}
+
+/* Add different colors for difficulty modes */
+.difficulty-easy {
+  color: #33ff33; /* Keep green for easy */
+}
+
+.difficulty-medium {
+  color: #ffff33; /* Yellow for medium */
+  text-shadow: 0 0 5px #ffff33;
+}
+
+.difficulty-hard {
+  color: #ff3333; /* Red for hard */
+  text-shadow: 0 0 5px #ff3333;
 }
 
 @media (max-width: 600px) {

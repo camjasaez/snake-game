@@ -13,11 +13,43 @@ class Game {
     this.scoreManager = new ScoreManager();
     this.isGameOver = false;
     this.lastUpdateTime = 0;
+    this.gameSpeed = 100; // Default speed (medium)
+
+    this.initializeWelcomeModal();
 
     document.addEventListener('keydown', this.handleKeyPress.bind(this));
   }
 
+  initializeWelcomeModal() {
+    const welcomeModal = document.getElementById('welcomeModal');
+    const startButton = document.getElementById('startButton');
+    const difficultyButtons = document.querySelectorAll('.difficulty-button');
+
+    // Handle difficulty selection
+    difficultyButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        // Remove selected class from all buttons
+        difficultyButtons.forEach((btn) => btn.classList.remove('selected'));
+        // Add selected class to clicked button
+        button.classList.add('selected');
+        // Update game speed
+        this.gameSpeed = parseInt(button.dataset.speed);
+      });
+    });
+
+    // Handle start button
+    startButton.addEventListener('click', () => {
+      welcomeModal.classList.remove('show');
+      this.start();
+    });
+  }
+
   start() {
+    // Reset game state
+    this.isGameOver = false;
+    this.snake.reset();
+    this.food.generate(CANVAS_SIZE, this.snake.body);
+    this.scoreManager.resetScore();
     this.lastUpdateTime = performance.now();
     this.gameLoop();
   }
@@ -25,7 +57,8 @@ class Game {
   gameLoop(currentTime) {
     const deltaTime = currentTime - this.lastUpdateTime;
 
-    if (deltaTime >= GAME_SPEED) {
+    if (deltaTime >= this.gameSpeed) {
+      // Use dynamic game speed
       this.update();
       this.render();
       this.lastUpdateTime = currentTime;

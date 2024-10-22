@@ -25,6 +25,29 @@
         <button class="modal-button" id="restartButton">Play Again</button>
       </div>
     </div>
+
+    <div class="modal-overlay show welcome-modal" id="welcomeModal">
+      <div class="modal-content">
+        <h2 class="modal-title">Welcome to Snake!</h2>
+        <p class="modal-text">Get ready to play the classic snake game</p>
+
+        <div class="modal-controls">
+          <h3 class="modal-controls-title">How to Play</h3>
+          <p class="modal-control-item">→ Use arrow keys to move</p>
+          <p class="modal-control-item">→ Collect food to grow</p>
+          <p class="modal-control-item">→ Avoid hitting walls</p>
+          <p class="modal-control-item">→ Don't crash into yourself</p>
+        </div>
+
+        <div class="difficulty-buttons">
+          <button class="difficulty-button selected" data-speed="150">Easy</button>
+          <button class="difficulty-button" data-speed="100">Medium</button>
+          <button class="difficulty-button" data-speed="50">Hard</button>
+        </div>
+
+        <button class="modal-button" id="startButton">Start Game</button>
+      </div>
+    </div>
     <script type="module" src="../src/index.js"></script>
   </body>
 </html>

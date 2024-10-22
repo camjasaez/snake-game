@@ -110,6 +110,29 @@ canvas {
   font-size: 14px;
   margin-bottom: 20px;
   color: #33ff33;
+  line-height: 1.5;
+}
+
+.modal-controls {
+  display: inline-block;
+  text-align: left;
+  margin: 20px 0;
+  padding: 15px;
+  border: 2px solid #33ff33;
+  box-shadow: 0 0 5px #33ff33;
+}
+
+.modal-controls-title {
+  font-size: 12px;
+  color: #33ff33;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.modal-control-item {
+  font-size: 10px;
+  margin: 5px 0;
+  color: #33ff33;
 }
 
 .modal-button {
@@ -131,4 +154,54 @@ canvas {
 
 .modal-overlay.show {
   display: flex;
+}
+
+/* Animation for welcome modal */
+@keyframes neonPulse {
+  0% {
+    box-shadow:
+      0 0 10px #33ff33,
+      0 0 20px #33ff33,
+      0 0 30px #33ff33;
+  }
+  50% {
+    box-shadow:
+      0 0 15px #33ff33,
+      0 0 25px #33ff33,
+      0 0 35px #33ff33;
+  }
+  100% {
+    box-shadow:
+      0 0 10px #33ff33,
+      0 0 20px #33ff33,
+      0 0 30px #33ff33;
+  }
+}
+
+.welcome-modal .modal-content {
+  animation: neonPulse 2s infinite;
+}
+
+.difficulty-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.difficulty-button {
+  background-color: transparent;
+  border: 1px solid #33ff33;
+  color: #33ff33;
+  padding: 8px 15px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.difficulty-button.selected {
+  background-color: #33ff33;
+  color: #000000;
+  box-shadow: 0 0 10px #33ff33;
 }

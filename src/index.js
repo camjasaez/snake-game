@@ -1,6 +1,6 @@
 import Game from './modules/game.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const game = new Game('gameCanvas');
-  game.start();
+  new Game('gameCanvas');
+  // Note: removed the automatic game.start() call since it will be triggered by the start button
 });
